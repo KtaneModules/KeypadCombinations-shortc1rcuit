@@ -18,8 +18,11 @@ public class KeypadCombinations : MonoBehaviour {
 	public KMBombInfo bomb;
 	public KMAudio Audio;
 
-	//Table that contains all the possible passwords
-	int[] table = new int[100]{3803,2702,9080,7832,1786,8993,0174,6911,2754,0837,7965,7942,0849,7047,7265,2534,3873,0719,6564,7976,1084,7164,9075,2840,2071,0787,1878,4325,2806,1548,5127,5295,9039,4816,3441,0821,6966,7284,4719,7067,4387,2984,1723,6337,7094,4873,1460,1953,4787,1934,6371,9372,1544,9041,1809,1762,9359,2948,5325,5336,6231,8893,1211,4943,3545,7958,4144,8854,4763,4469,9600,3875,6298,4783,9878,7892,1978,2795,4896,5732,1870,6874,5176,9685,8978,8989,4522,8176,6821,1911,0908,0718,1677,8653,0982,8742,8974,7778,8198,9972};
+    //Used for the ruleseed mod
+    public KMRuleSeedable ruleSeedable;
+
+    //Table that contains all the possible passwords
+    int[] table = new int[100];
 
 	//Tables to hold the numbers each button can display
 	int[,] buttonnum = new int[4, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
@@ -128,7 +131,20 @@ public class KeypadCombinations : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		GenerateCombination();
+        var rnd = ruleSeedable.GetRNG();
+        //Uses the origanal set of numbers if the ruleseed is one
+        if (rnd.Seed == 1)
+        {
+            table = new int[100] { 3803, 2702, 9080, 7832, 1786, 8993, 0174, 6911, 2754, 0837, 7965, 7942, 0849, 7047, 7265, 2534, 3873, 0719, 6564, 7976, 1084, 7164, 9075, 2840, 2071, 0787, 1878, 4325, 2806, 1548, 5127, 5295, 9039, 4816, 3441, 0821, 6966, 7284, 4719, 7067, 4387, 2984, 1723, 6337, 7094, 4873, 1460, 1953, 4787, 1934, 6371, 9372, 1544, 9041, 1809, 1762, 9359, 2948, 5325, 5336, 6231, 8893, 1211, 4943, 3545, 7958, 4144, 8854, 4763, 4469, 9600, 3875, 6298, 4783, 9878, 7892, 1978, 2795, 4896, 5732, 1870, 6874, 5176, 9685, 8978, 8989, 4522, 8176, 6821, 1911, 0908, 0718, 1677, 8653, 0982, 8742, 8974, 7778, 8198, 9972 };
+        }
+        else
+        {
+            List<int> numbers = Enumerable.Range(0, 10000).ToList();
+            rnd.ShuffleFisherYates(numbers);
+			table = numbers.Take(100).ToArray();
+        }
+
+        GenerateCombination();
 
 		Debug.LogFormat("[Keypad Combinations #{0}] The needed number is {1}", moduleId, answer);
 

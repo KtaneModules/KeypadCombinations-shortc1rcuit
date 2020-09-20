@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 114727904521941062}
   - component: {fileID: 114395689195986560}
   - component: {fileID: 114362081449150270}
+  - component: {fileID: 114189533565442992}
   m_Layer: 0
   m_Name: keypadCombinations
   m_TagString: Untagged
@@ -1635,6 +1636,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114189533565442992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181563213684844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf69c2de51bd3c43bbd9bc22578ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _seed: 1
 --- !u!114 &114220569483519122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1687,6 +1700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 114625574213660530}
   Audio: {fileID: 114980101981710132}
+  ruleSeedable: {fileID: 114189533565442992}
   numbertext:
   - {fileID: 102136113553934390}
   - {fileID: 102003974439567178}

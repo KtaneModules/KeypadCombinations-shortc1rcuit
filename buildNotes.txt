@@ -1,8 +1,10 @@
 Keypad Combinations
 
+
 0849 2840 2984 7284 2984 1762… UGH. What was my pin number again?
 
 Module ID: keypadCombinations
+
 
 Created by Short_c1rcuit
 
@@ -21,3 +23,6 @@ Added "yield return null" to certain parts of the twitch plays support.
 
 Build 1.3 notes:
 Added autosolve and adjusted cycle timings
+
+Build 1.4 notes:
+Added rule-seed support (requires manual reprint)
