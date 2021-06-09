@@ -85,6 +85,7 @@ public class KeypadCombinations : MonoBehaviour {
 					{
 						yield return null;
 						buttons[i].OnInteract();
+						yield return "trycancel";
 						yield return new WaitForSecondsRealtime(0.1f);
 					}
 				}
