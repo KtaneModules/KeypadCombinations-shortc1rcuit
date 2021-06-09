@@ -92,6 +92,7 @@ public class KeypadCombinations : MonoBehaviour {
 				if (numbertext[i].text != command[i].ToString())
 				{
 					yield return "sendtochaterror One of the inputted numbers is not available.";
+					yield break;
 				}
 			}
 			//One you have set all the buttons to the desired output then press the display to submit

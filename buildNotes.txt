@@ -26,3 +26,6 @@ Added autosolve and adjusted cycle timings
 
 Build 1.4 notes:
 Added rule-seed support (requires manual reprint)
+
+Build 1.5 notes:
+Fixed TP problem

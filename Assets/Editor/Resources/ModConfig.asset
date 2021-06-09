@@ -20,7 +20,8 @@ MonoBehaviour:
     1.0 notes:\r\nInitial release\r.\n\nBuild 1.1 notes:\r\nAdded Twitch Plays support\r.\n\r\nBuild
     1.2 notes: \r\nAdded \"yield return null\" to certain parts of the twitch plays
     support.\n\nBuild 1.3 notes:\r\nAdded autosolve and adjusted cycle timings.\n\nBuild
-    1.4 notes:\nAdded rule-seed support (requires manual reprint)"
-  version: 1.4
+    1.4 notes:\nAdded rule-seed support (requires manual reprint)\n\nBuild 1.5 notes:\nFixed
+    TP problem"
+  version: 1.5
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 8191e45202c5bb941a896b198cef0c51, type: 3}
